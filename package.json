@@ -1,0 +1,64 @@
+{
+  "name": "@gg-utils/worktree-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Product-neutral worktree stack primitives for branch prefixes and worktree helpers.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./prefix": {
+      "types": "./src/prefix.ts",
+      "default": "./src/prefix.ts"
+    },
+    "./package.json": "./package.json",
+    "./foundation": {
+      "types": "./src/foundation.ts",
+      "default": "./src/foundation.ts"
+    },
+    "./git-branches": {
+      "types": "./src/git-branches.ts",
+      "default": "./src/git-branches.ts"
+    },
+    "./git-worktree-sync": {
+      "types": "./src/git-worktree-sync.ts",
+      "default": "./src/git-worktree-sync.ts"
+    },
+    "./repo-locks": {
+      "types": "./src/repo-locks.ts",
+      "default": "./src/repo-locks.ts"
+    },
+    "./worktree-discovery": {
+      "types": "./src/worktree-discovery.ts",
+      "default": "./src/worktree-discovery.ts"
+    },
+    "./shell-shim": {
+      "types": "./src/shell-shim.ts",
+      "default": "./src/shell-shim.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "!src/**/*.unit.test.ts",
+    "README.md",
+    "tsconfig.json",
+    "tsconfig.build.json"
+  ],
+  "engines": {
+    "node": ">=24.11.1 <25",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc -p tsconfig.build.json",
+    "type-check": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "test": "node ../../node_modules/tsx/dist/cli.mjs --test \"src/**/*.unit.test.ts\""
+  }
+}
