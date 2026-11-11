@@ -49,7 +49,7 @@ function createCommittedRepository(sandboxRoot: string): string {
   return repoDir;
 }
 
-test("worktreeStackRemoteExists reports configured remotes", () => {
+void test("worktreeStackRemoteExists reports configured remotes", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-remote-"));
   try {
     const repoDir = createCommittedRepository(sandboxRoot);
@@ -64,7 +64,7 @@ test("worktreeStackRemoteExists reports configured remotes", () => {
   }
 });
 
-test("worktreeStackEnsureBranchUpstream configures an existing remote branch", () => {
+void test("worktreeStackEnsureBranchUpstream configures an existing remote branch", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-upstream-"));
   try {
     const repoDir = createCommittedRepository(sandboxRoot);
@@ -81,7 +81,7 @@ test("worktreeStackEnsureBranchUpstream configures an existing remote branch", (
   }
 });
 
-test("worktreeStackCheckoutBranch creates a tracking branch from a remote branch", () => {
+void test("worktreeStackCheckoutBranch creates a tracking branch from a remote branch", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-checkout-"));
   try {
     const sourceDir = createCommittedRepository(sandboxRoot);

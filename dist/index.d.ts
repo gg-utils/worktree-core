@@ -29,4 +29,3 @@ export * from "./git-worktree-sync.js";
 export * from "./repo-locks.js";
 export * from "./worktree-discovery.js";
 export * from "./shell-shim.js";
-//# sourceMappingURL=index.d.ts.map

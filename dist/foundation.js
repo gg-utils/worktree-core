@@ -107,4 +107,3 @@ export function worktreeStackRequireDirectory(directoryPath, description) {
     }
     worktreeStackError(`Missing directory (${description}): ${directoryPath}`);
 }
-//# sourceMappingURL=foundation.js.map

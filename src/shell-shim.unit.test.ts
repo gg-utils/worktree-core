@@ -41,7 +41,7 @@ import {
   worktreeStackCoreShellShimRun,
 } from "./shell-shim.js";
 
-test("worktreeStackCoreShellShimParseArgv parses list-worktrees mode", () => {
+void test("worktreeStackCoreShellShimParseArgv parses list-worktrees mode", () => {
   assert.deepEqual(
     worktreeStackCoreShellShimParseArgv([
       "list-worktrees",
@@ -58,14 +58,14 @@ test("worktreeStackCoreShellShimParseArgv parses list-worktrees mode", () => {
   );
 });
 
-test("worktreeStackCoreShellShimRenderUsage includes the configured program name", () => {
+void test("worktreeStackCoreShellShimRenderUsage includes the configured program name", () => {
   assert.match(
     worktreeStackCoreShellShimRenderUsage("shim-entry"),
     /Usage: shim-entry <command>/u,
   );
 });
 
-test("worktreeStackCoreShellShimRun lists sorted injected worktree paths", () => {
+void test("worktreeStackCoreShellShimRun lists sorted injected worktree paths", () => {
   let stdout = "";
   let stderr = "";
   const exitCode = worktreeStackCoreShellShimRun({
@@ -85,7 +85,7 @@ test("worktreeStackCoreShellShimRun lists sorted injected worktree paths", () =>
   assert.equal(stderr, "");
 });
 
-test("worktreeStackCoreShellShimRun returns usage errors without throwing", () => {
+void test("worktreeStackCoreShellShimRun returns usage errors without throwing", () => {
   let stderr = "";
   const exitCode = worktreeStackCoreShellShimRun({
     argv: ["list-worktrees", "--mode", "bad"],

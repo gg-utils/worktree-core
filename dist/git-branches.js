@@ -162,4 +162,3 @@ export function worktreeStackCheckoutBranch(repoDir, branchName, remoteName = "o
     }
     worktreeStackEnsureBranchUpstream(repoDir, branchName, remoteName);
 }
-//# sourceMappingURL=git-branches.js.map

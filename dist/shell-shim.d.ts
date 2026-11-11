@@ -35,4 +35,3 @@ export declare function worktreeStackCoreShellShimRenderUsage(programName: strin
 export declare function worktreeStackCoreShellShimParseArgv(argv: readonly string[]): WorktreeStackCoreShellShim_ParseResult;
 /** Runs the shell shim and returns the desired process exit code. */
 export declare function worktreeStackCoreShellShimRun(options: WorktreeStackCoreShellShim_RunOptions): number;
-//# sourceMappingURL=shell-shim.d.ts.map

@@ -62,4 +62,3 @@ export declare function worktreeStackTailFileIfPresent(filePath: string, lineCou
  * I/O: Issues `git worktree remove --force` for stale siblings; best-effort with `allowFailure`.
  */
 export declare function worktreeStackCleanupStaleTempMergeWorktrees(parentDir: string, currentRunId: string): void;
-//# sourceMappingURL=git-worktree-sync.d.ts.map
