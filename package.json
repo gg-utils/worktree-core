@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Product-neutral worktree stack primitives for branch prefixes and worktree helpers.",
-  "license": "UNLICENSED",
+  "license": "0BSD",
   "type": "module",
   "sideEffects": false,
   "main": "./src/index.ts",
