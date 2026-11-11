@@ -251,4 +251,3 @@ export function worktreeStackResolvePreparedCanonicalRootWorkspacePath(worktreeP
     }
     return fallbackPath ?? "";
 }
-//# sourceMappingURL=worktree-discovery.js.map

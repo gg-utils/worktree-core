@@ -82,4 +82,3 @@ export function worktreeStackBuildBranchName(prefix, stackName) {
 export function worktreeStackIsKnownPrefix(prefix) {
     return WORKTREE_STACK_KNOWN_PREFIXES.some((knownPrefix) => knownPrefix === prefix);
 }
-//# sourceMappingURL=prefix.js.map

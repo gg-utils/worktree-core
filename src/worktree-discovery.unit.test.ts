@@ -52,7 +52,7 @@ function writeSlotMetadata(worktreePath: string, slot: number): void {
   );
 }
 
-test("worktreeStackReadJsonField reads nested scalar fields", () => {
+void test("worktreeStackReadJsonField reads nested scalar fields", () => {
   const sandbox = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-json-"));
   try {
     const metadataPath = path.join(sandbox, "metadata.json");
@@ -71,7 +71,7 @@ test("worktreeStackReadJsonField reads nested scalar fields", () => {
   }
 });
 
-test("worktreeStackResolveDefaultWorktreesBase uses a configured directory name", () => {
+void test("worktreeStackResolveDefaultWorktreesBase uses a configured directory name", () => {
   const sandbox = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-base-"));
   try {
     const repoRoot = path.join(sandbox, "repo");
@@ -98,7 +98,7 @@ test("worktreeStackResolveDefaultWorktreesBase uses a configured directory name"
   }
 });
 
-test("worktreeStackBuildFolderName derives stable compact folder tokens", () => {
+void test("worktreeStackBuildFolderName derives stable compact folder tokens", () => {
   assert.equal(
     worktreeStackBuildFolderName("260520", "worktree-7", "feature/demo"),
     "260520WT07-FEATURE-DEMO",
@@ -109,7 +109,7 @@ test("worktreeStackBuildFolderName derives stable compact folder tokens", () => 
   );
 });
 
-test("worktree metadata path helpers and canonical fallback stay stable", () => {
+void test("worktree metadata path helpers and canonical fallback stay stable", () => {
   const worktreePath = path.join("/repo", "prepared");
   assert.equal(
     worktreeStackMetadataPathForWorktree(worktreePath),
@@ -128,7 +128,7 @@ test("worktree metadata path helpers and canonical fallback stay stable", () => 
   );
 });
 
-test("worktreeStackPickNextSlot finds the first unused registered prepared-worktree slot", () => {
+void test("worktreeStackPickNextSlot finds the first unused registered prepared-worktree slot", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-slot-"));
   try {
     const repoRoot = path.join(sandboxRoot, "repo");

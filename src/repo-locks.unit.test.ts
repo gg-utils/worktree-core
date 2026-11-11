@@ -24,14 +24,14 @@ import {
   worktreeStackWriterLockDir,
 } from "./repo-locks.js";
 
-test("worktreeStackWriterLockDir resolves the historical repo writer lock path", () => {
+void test("worktreeStackWriterLockDir resolves the historical repo writer lock path", () => {
   assert.equal(
     worktreeStackWriterLockDir("/repo"),
     path.join("/repo", ".tmp", "worktree-stack", "locks", "repo-writer.lock"),
   );
 });
 
-test("worktreeStackNamedLockDir slugifies and hashes resource keys", () => {
+void test("worktreeStackNamedLockDir slugifies and hashes resource keys", () => {
   const lockDir = worktreeStackNamedLockDir(
     "/repo",
     "scope",
@@ -47,7 +47,7 @@ test("worktreeStackNamedLockDir slugifies and hashes resource keys", () => {
   );
 });
 
-test("worktreeStackAcquireLockDir and release manage a filesystem lock", async () => {
+void test("worktreeStackAcquireLockDir and release manage a filesystem lock", async () => {
   const sandbox = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-lock-"));
   const lockDir = worktreeStackNamedLockDir(sandbox, "scope", "resource");
 
@@ -77,7 +77,7 @@ test("worktreeStackAcquireLockDir and release manage a filesystem lock", async (
   fs.rmSync(sandbox, { force: true, recursive: true });
 });
 
-test("worktreeStackAcquireLockDir fails fast when another process owns a lock", async () => {
+void test("worktreeStackAcquireLockDir fails fast when another process owns a lock", async () => {
   const sandbox = fs.mkdtempSync(
     path.join(os.tmpdir(), "worktree-lock-blocked-"),
   );

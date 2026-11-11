@@ -1,64 +1,73 @@
 {
   "name": "@gg-utils/worktree-core",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "description": "Product-neutral worktree stack primitives for branch prefixes and worktree helpers.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./prefix": {
-      "types": "./src/prefix.ts",
-      "default": "./src/prefix.ts"
+      "types": "./dist/prefix.d.ts",
+      "default": "./dist/prefix.js"
     },
     "./package.json": "./package.json",
     "./foundation": {
-      "types": "./src/foundation.ts",
-      "default": "./src/foundation.ts"
+      "types": "./dist/foundation.d.ts",
+      "default": "./dist/foundation.js"
     },
     "./git-branches": {
-      "types": "./src/git-branches.ts",
-      "default": "./src/git-branches.ts"
+      "types": "./dist/git-branches.d.ts",
+      "default": "./dist/git-branches.js"
     },
     "./git-worktree-sync": {
-      "types": "./src/git-worktree-sync.ts",
-      "default": "./src/git-worktree-sync.ts"
+      "types": "./dist/git-worktree-sync.d.ts",
+      "default": "./dist/git-worktree-sync.js"
     },
     "./repo-locks": {
-      "types": "./src/repo-locks.ts",
-      "default": "./src/repo-locks.ts"
+      "types": "./dist/repo-locks.d.ts",
+      "default": "./dist/repo-locks.js"
     },
     "./worktree-discovery": {
-      "types": "./src/worktree-discovery.ts",
-      "default": "./src/worktree-discovery.ts"
+      "types": "./dist/worktree-discovery.d.ts",
+      "default": "./dist/worktree-discovery.js"
     },
     "./shell-shim": {
-      "types": "./src/shell-shim.ts",
-      "default": "./src/shell-shim.ts"
+      "types": "./dist/shell-shim.d.ts",
+      "default": "./dist/shell-shim.js"
     }
   },
   "files": [
     "dist/",
-    "src/",
-    "!src/**/*.unit.test.ts",
     "README.md",
-    "tsconfig.json",
-    "tsconfig.build.json"
+    "LICENSE"
   ],
   "engines": {
-    "node": ">=24.11.1 <25",
+    "node": ">=22.0.0 <27",
     "npm": ">=9.0.0"
   },
   "packageManager": "npm@11.12.1",
   "scripts": {
-    "build": "node ../../node_modules/typescript/bin/tsc -p tsconfig.build.json",
-    "type-check": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
-    "test": "node ../../node_modules/tsx/dist/cli.mjs --test \"src/**/*.unit.test.ts\""
+    "build": "tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test \"src/**/*.unit.test.ts\"",
+    "lint": "eslint --max-warnings 0 .",
+    "check:dist": "sh scripts/check-dist.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gg-utils/worktree-core.git"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "@types/node": "22.20.5",
+    "eslint": "9.39.5",
+    "typescript-eslint": "8.72.2"
   }
 }

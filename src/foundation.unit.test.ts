@@ -29,24 +29,24 @@ import {
   worktreeStackShellQuote,
 } from "./foundation.js";
 
-test("worktreeStackShellQuote quotes empty strings and single quotes", () => {
+void test("worktreeStackShellQuote quotes empty strings and single quotes", () => {
   assert.equal(worktreeStackShellQuote(""), "''");
   assert.equal(worktreeStackShellQuote("plain"), "'plain'");
   assert.equal(worktreeStackShellQuote("has ' quote"), "'has '\\'' quote'");
 });
 
-test("worktreeStackMeasureDurationMs subtracts timestamps", () => {
+void test("worktreeStackMeasureDurationMs subtracts timestamps", () => {
   assert.equal(worktreeStackMeasureDurationMs(10, 42), 32);
 });
 
-test("worktreeStackJsonEscape strips JSON string delimiters", () => {
+void test("worktreeStackJsonEscape strips JSON string delimiters", () => {
   assert.equal(
     worktreeStackJsonEscape('quote " and slash \\'),
     'quote \\" and slash \\\\',
   );
 });
 
-test("worktreeStackRunCommand returns captured output and supports allowed failures", () => {
+void test("worktreeStackRunCommand returns captured output and supports allowed failures", () => {
   const ok = worktreeStackRunCommand(process.execPath, [
     "-e",
     "process.stdout.write('ok'); process.stderr.write('warn')",
@@ -69,7 +69,7 @@ test("worktreeStackRunCommand returns captured output and supports allowed failu
   );
 });
 
-test("worktreeStackRequireFile and worktreeStackRequireDirectory guard paths", () => {
+void test("worktreeStackRequireFile and worktreeStackRequireDirectory guard paths", () => {
   const sandbox = fs.mkdtempSync(
     path.join(os.tmpdir(), "worktree-foundation-"),
   );
@@ -91,6 +91,6 @@ test("worktreeStackRequireFile and worktreeStackRequireDirectory guard paths", (
   fs.rmSync(sandbox, { force: true, recursive: true });
 });
 
-test("worktreeStackError adds the historical error prefix", () => {
+void test("worktreeStackError adds the historical error prefix", () => {
   assert.throws(() => worktreeStackError("nope"), /\[worktree\] ERROR: nope/u);
 });

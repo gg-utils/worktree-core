@@ -51,4 +51,3 @@ export declare function worktreeStackRequireCommand(commandName: string): void;
 export declare function worktreeStackRequireFile(filePath: string, description: string): void;
 /** Asserts that a directory exists at directoryPath, throwing with the given description if not. */
 export declare function worktreeStackRequireDirectory(directoryPath: string, description: string): void;
-//# sourceMappingURL=foundation.d.ts.map

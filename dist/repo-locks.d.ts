@@ -68,4 +68,3 @@ export declare function worktreeStackWithRepoMutationLock<T>(rootDir: string, re
 export declare function worktreeStackAcquireRootMainSyncLock(rootDir: string, targetBranch: string, ownerLabel: string, waitMode?: WorktreeStack_LockWaitMode): Promise<void>;
 /** Releases the root-main sync lock acquired for `targetBranch` under `rootDir`. */
 export declare function worktreeStackReleaseRootMainSyncLock(rootDir: string, targetBranch: string): void;
-//# sourceMappingURL=repo-locks.d.ts.map

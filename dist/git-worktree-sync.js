@@ -255,4 +255,3 @@ export function worktreeStackCleanupStaleTempMergeWorktrees(parentDir, currentRu
         });
     }
 }
-//# sourceMappingURL=git-worktree-sync.js.map

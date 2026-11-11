@@ -25,7 +25,7 @@ import {
   worktreeStackNormalizeBranchPrefix,
 } from "./prefix.js";
 
-test("worktreeStackNormalizeBranchPrefix normalizes blanks and valid slugs", () => {
+void test("worktreeStackNormalizeBranchPrefix normalizes blanks and valid slugs", () => {
   assert.equal(
     worktreeStackNormalizeBranchPrefix(""),
     WORKTREE_STACK_DEFAULT_BRANCH_PREFIX,
@@ -42,7 +42,7 @@ test("worktreeStackNormalizeBranchPrefix normalizes blanks and valid slugs", () 
   assert.equal(worktreeStackNormalizeBranchPrefix("my-editor"), "my-editor");
 });
 
-test("worktreeStackNormalizeBranchPrefix rejects invalid slug prefixes", () => {
+void test("worktreeStackNormalizeBranchPrefix rejects invalid slug prefixes", () => {
   assert.throws(
     () => worktreeStackNormalizeBranchPrefix("1bad"),
     /Invalid branch prefix/u,
@@ -61,7 +61,7 @@ test("worktreeStackNormalizeBranchPrefix rejects invalid slug prefixes", () => {
   );
 });
 
-test("worktreeStackExtractBranchPrefix splits branch tokens", () => {
+void test("worktreeStackExtractBranchPrefix splits branch tokens", () => {
   assert.deepEqual(worktreeStackExtractBranchPrefix("codex/fix-auth"), {
     prefix: "codex",
     stackName: "fix-auth",
@@ -88,7 +88,7 @@ test("worktreeStackExtractBranchPrefix splits branch tokens", () => {
   });
 });
 
-test("worktreeStackBuildBranchName joins prefix and stack name", () => {
+void test("worktreeStackBuildBranchName joins prefix and stack name", () => {
   assert.equal(
     worktreeStackBuildBranchName("codex", "fix-auth"),
     "codex/fix-auth",
@@ -99,7 +99,7 @@ test("worktreeStackBuildBranchName joins prefix and stack name", () => {
   );
 });
 
-test("worktreeStackIsKnownPrefix identifies known and unknown prefixes", () => {
+void test("worktreeStackIsKnownPrefix identifies known and unknown prefixes", () => {
   for (const prefix of WORKTREE_STACK_KNOWN_PREFIXES) {
     assert.equal(worktreeStackIsKnownPrefix(prefix), true);
   }

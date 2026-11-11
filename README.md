@@ -98,3 +98,11 @@ Scripts currently expect the source-first workspace toolchain.
 - Helpers can invoke Git through injected command runners; callers choose when to mutate repos.
 - This package intentionally has no UI, no local-edge policy, and no environment materialization.
 - Prefer `@gg-utils/worktree-kit` for full command and UI workflows.
+
+## Use from another repository
+
+Requires Node `>=22.0.0 <27`. Install the built JavaScript and declarations by tag:
+
+```json
+{"dependencies": {"@gg-utils/worktree-core": "git+https://github.com/gg-utils/worktree-core.git#v0.2.0"}}
+```

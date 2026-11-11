@@ -63,4 +63,3 @@ export declare function worktreeStackReadPreparedStateField(worktreePath: string
  * I/O: Reads small reference files under the worktree `.tmp` tree synchronously.
  */
 export declare function worktreeStackResolvePreparedCanonicalRootWorkspacePath(worktreePath: string, fallbackPath?: string): string;
-//# sourceMappingURL=worktree-discovery.d.ts.map

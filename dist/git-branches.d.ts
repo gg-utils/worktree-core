@@ -34,4 +34,3 @@ export declare function worktreeStackRemoteExists(repoDir: string, remoteName: s
  * when checkout succeeds.
  */
 export declare function worktreeStackCheckoutBranch(repoDir: string, branchName: string, remoteName?: string): void;
-//# sourceMappingURL=git-branches.d.ts.map

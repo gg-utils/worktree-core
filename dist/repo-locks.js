@@ -300,4 +300,3 @@ export function worktreeStackReleaseRootMainSyncLock(rootDir, targetBranch) {
     const resourceKey = worktreeStackRootMainSyncResourceKey(rootDir, targetBranch);
     worktreeStackReleaseLockDir(worktreeStackNamedLockDir(rootDir, "root-main-sync", resourceKey));
 }
-//# sourceMappingURL=repo-locks.js.map

@@ -90,4 +90,3 @@ export function worktreeStackCoreShellShimRun(options) {
     }
     return 0;
 }
-//# sourceMappingURL=shell-shim.js.map

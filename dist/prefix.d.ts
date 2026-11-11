@@ -34,4 +34,3 @@ export declare function worktreeStackExtractBranchPrefix(branchName: string): Wo
 export declare function worktreeStackBuildBranchName(prefix: string, stackName: string): string;
 /** Returns true when a prefix is in the known-prefixes list. */
 export declare function worktreeStackIsKnownPrefix(prefix: string): prefix is WorktreeStackKnownPrefix;
-//# sourceMappingURL=prefix.d.ts.map

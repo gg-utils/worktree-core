@@ -63,7 +63,7 @@ function createCommittedRepository(sandboxRoot: string): string {
   return repoDir;
 }
 
-test("worktree registration checks read git worktree porcelain output", () => {
+void test("worktree registration checks read git worktree porcelain output", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-registered-"));
   try {
     const repoDir = createCommittedRepository(sandboxRoot);
@@ -83,7 +83,7 @@ test("worktree registration checks read git worktree porcelain output", () => {
   }
 });
 
-test("checkout helpers recognize and attach safe detached branch tips", () => {
+void test("checkout helpers recognize and attach safe detached branch tips", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-attach-"));
   try {
     const repoDir = createCommittedRepository(sandboxRoot);
@@ -111,7 +111,7 @@ test("checkout helpers recognize and attach safe detached branch tips", () => {
   }
 });
 
-test("worktreeStackResolveGitmodulesSubmoduleBranch reads configured branches", () => {
+void test("worktreeStackResolveGitmodulesSubmoduleBranch reads configured branches", () => {
   const sandboxRoot = fs.mkdtempSync(path.join(os.tmpdir(), "worktree-gitmodules-"));
   try {
     const gitmodulesPath = path.join(sandboxRoot, ".gitmodules");
